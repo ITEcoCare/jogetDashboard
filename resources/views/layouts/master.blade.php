@@ -44,7 +44,7 @@
 
   @stack('custom-css')
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-navbar-fixed layout-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -205,6 +205,7 @@
   });
   </script> --}}
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -222,24 +223,68 @@
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'appId', name: 'appId'},
             {data: 'name', name: 'name'},
-            {data: 'published', name: 'published'},
-            {data: 'published', name: 'published'},
-            {data: 'published', name: 'published'},
-            {data: 'link', name: 'link'},
+            // {data: 'published', name: 'published'},
+            {
+                // data: {
+                //     "_": "phone",
+                //     "filter": "phone_filter",
+                //     "display": "phone_display"
+                // },
+                data: null, 
+                // name: 'appId',
+                render: function(content, type, full, meta){
+                    return '<a href="viewDetails/?Appname=' + content.name + '&appId='+ content.appId +'&status=ongoing" class=""> 8 ongoing </a>';
+                }, 
+                orderable: false, 
+                searchable: false
+            },
+            {
+                data: null, 
+                // name: 'name',
+                render: function(content, type, full, meta){
+                    return '<a href="viewDetails/?Appname=' + content.name + '&appId='+ content.appId +'&status=completed" class="" style="color:seagreen;"> 23 completed </a>';
+                }, 
+                orderable: false, 
+                searchable: false
+            },
+            {
+                data: null, 
+                name: 'name',
+                render: function(content, type, full, meta){
+                    return '<a href="viewDetails/?Appname=' + content.name + '&appId='+ content.appId +'&status=rejected" style="color:crimson;"> 3 rejected </a>';
+                }, 
+                orderable: false, 
+                searchable: false
+            },
+            {
+                data: null, 
+                name: 'name',
+                render: function(content, type, full, meta){
+                    return '<a href="viewDetails/?Appname=' + content.name + '&appId='+ content.appId +'&status=clarify" style="color:#FFC108;"> 1 clarify </a>';
+                }, 
+                orderable: false, 
+                searchable: false
+            },
+            {
+                data: 'name', 
+                name: 'name',
+                render: function(link, type, full, meta){
+                    // return "<img src={{ URL::to('/') }}/images/" + data + " width='70' class='img-thumbnail' />";
+                    // return "<a href='link'" + " class='edit btn btn-success btn-sm'>ENTER</a>";
+                    return '<a href="' + link + '" class="edit btn btn-success btn-sm">ENTER APP</a>';
+                }, 
+                orderable: false, 
+                searchable: false
+            },
+            // {data: 'url', name: 'url'},
+            // {data: 'link'},
             // {data: 'createdBy', name: 'createdBy'},
-            // {data: 'c_namaRequester', name: 'c_namaRequester'},
-            // {data: 'createdByName', name: 'createdByName'},
-            // {data: 'c_tanggalPengajuan', name: 'c_tanggalPengajuan'},
-            // {data: 'c_noPermintaan', name: 'c_noPermintaan'},
-            // {data: 'c_requestStatus', name: 'c_requestStatus'},
-            // {data: 'c_attachmentPengirim', name: 'c_attachmentPengirim'},
-              // {
-              //     data: 'action', 
-              //     name: 'action', 
-              //     orderable: true, 
-              //     searchable: true
-              // },
-          ]
+          ],
+        //   buttons: [
+        //     'colvis',
+        //     'excel',
+        //     'print'
+        //   ]
       });
       
     });

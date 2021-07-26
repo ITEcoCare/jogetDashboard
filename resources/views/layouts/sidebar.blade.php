@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/jogetdashboard" class="brand-link">
       <img src="{{ asset('')}}assets/dist/img/JogetLogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="">
       <span class="brand-text font-weight-light">Ecocare Joget DX</span>
     </a>
@@ -10,17 +10,17 @@
     width: 249px; --}}
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{ asset('')}}assets/dist/img/ava.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Dashboard Sidebar</a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- SidebarSearch Form -->
-      {{-- <div class="form-inline mt-3 mb-3 d-flex">
+      <div class="form-inline mt-3 mb-3 d-flex">
         <div class="input-group" data-widget="sidebar-search">
           <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -29,7 +29,7 @@
             </button>
           </div>
         </div>
-      </div> --}}
+      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -46,7 +46,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{ url('appDetail')}}" class="nav-link">
+                    <a href="{{ url('viewDetails')}}" class="nav-link">
                       {{-- <a href="{{ route('layouts.af') }}" class="nav-link"> --}}
                       <i class="far fa-circle nav-icon"></i>
                       <p>App Detail</p>
@@ -54,12 +54,11 @@
                   </li>
                   <li class="nav-item">
                     <a href="{{ url('af')}}" class="nav-link">
-                      {{-- <a href="{{ route('layouts.af') }}" class="nav-link"> --}}
                       <i class="far fa-circle nav-icon"></i>
                       <p>Advance Finance</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                     <a href="{{ url('/pcf')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>PCF & ECF</p>
@@ -160,7 +159,7 @@
                       <i class="far fa-circle nav-icon"></i>
                       <p>Tagihan Bermasalah</p>
                     </a>
-                  </li>
+                  </li> --}}
                 </ul>
               </li>
 

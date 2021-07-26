@@ -316,82 +316,82 @@
   var $footer_fixed_container = $('<div />', { class: 'mb-4' }).append($footer_fixed_checkbox).append('<span>Fixed</span>')
   $container.append($footer_fixed_container)
 
-  $container.append('<h6>Small Text Options</h6>')
+  // $container.append('<h6>Small Text Options</h6>')
 
-  var $text_sm_body_checkbox = $('<input />', {
-    type: 'checkbox',
-    value: 1,
-    checked: $('body').hasClass('text-sm'),
-    class: 'mr-1'
-  }).on('click', function () {
-    if ($(this).is(':checked')) {
-      $('body').addClass('text-sm')
-    } else {
-      $('body').removeClass('text-sm')
-    }
-  })
-  var $text_sm_body_container = $('<div />', { class: 'mb-1' }).append($text_sm_body_checkbox).append('<span>Body</span>')
-  $container.append($text_sm_body_container)
+  // var $text_sm_body_checkbox = $('<input />', {
+  //   type: 'checkbox',
+  //   value: 1,
+  //   checked: $('body').hasClass('text-sm'),
+  //   class: 'mr-1'
+  // }).on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     $('body').addClass('text-sm')
+  //   } else {
+  //     $('body').removeClass('text-sm')
+  //   }
+  // })
+  // var $text_sm_body_container = $('<div />', { class: 'mb-1' }).append($text_sm_body_checkbox).append('<span>Body</span>')
+  // $container.append($text_sm_body_container)
 
-  var $text_sm_header_checkbox = $('<input />', {
-    type: 'checkbox',
-    value: 1,
-    checked: $('.main-header').hasClass('text-sm'),
-    class: 'mr-1'
-  }).on('click', function () {
-    if ($(this).is(':checked')) {
-      $('.main-header').addClass('text-sm')
-    } else {
-      $('.main-header').removeClass('text-sm')
-    }
-  })
-  var $text_sm_header_container = $('<div />', { class: 'mb-1' }).append($text_sm_header_checkbox).append('<span>Navbar</span>')
-  $container.append($text_sm_header_container)
+  // var $text_sm_header_checkbox = $('<input />', {
+  //   type: 'checkbox',
+  //   value: 1,
+  //   checked: $('.main-header').hasClass('text-sm'),
+  //   class: 'mr-1'
+  // }).on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     $('.main-header').addClass('text-sm')
+  //   } else {
+  //     $('.main-header').removeClass('text-sm')
+  //   }
+  // })
+  // var $text_sm_header_container = $('<div />', { class: 'mb-1' }).append($text_sm_header_checkbox).append('<span>Navbar</span>')
+  // $container.append($text_sm_header_container)
 
-  var $text_sm_brand_checkbox = $('<input />', {
-    type: 'checkbox',
-    value: 1,
-    checked: $('.brand-link').hasClass('text-sm'),
-    class: 'mr-1'
-  }).on('click', function () {
-    if ($(this).is(':checked')) {
-      $('.brand-link').addClass('text-sm')
-    } else {
-      $('.brand-link').removeClass('text-sm')
-    }
-  })
-  var $text_sm_brand_container = $('<div />', { class: 'mb-1' }).append($text_sm_brand_checkbox).append('<span>Brand</span>')
-  $container.append($text_sm_brand_container)
+  // var $text_sm_brand_checkbox = $('<input />', {
+  //   type: 'checkbox',
+  //   value: 1,
+  //   checked: $('.brand-link').hasClass('text-sm'),
+  //   class: 'mr-1'
+  // }).on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     $('.brand-link').addClass('text-sm')
+  //   } else {
+  //     $('.brand-link').removeClass('text-sm')
+  //   }
+  // })
+  // var $text_sm_brand_container = $('<div />', { class: 'mb-1' }).append($text_sm_brand_checkbox).append('<span>Brand</span>')
+  // $container.append($text_sm_brand_container)
 
-  var $text_sm_sidebar_checkbox = $('<input />', {
-    type: 'checkbox',
-    value: 1,
-    checked: $('.nav-sidebar').hasClass('text-sm'),
-    class: 'mr-1'
-  }).on('click', function () {
-    if ($(this).is(':checked')) {
-      $('.nav-sidebar').addClass('text-sm')
-    } else {
-      $('.nav-sidebar').removeClass('text-sm')
-    }
-  })
-  var $text_sm_sidebar_container = $('<div />', { class: 'mb-1' }).append($text_sm_sidebar_checkbox).append('<span>Sidebar Nav</span>')
-  $container.append($text_sm_sidebar_container)
+  // var $text_sm_sidebar_checkbox = $('<input />', {
+  //   type: 'checkbox',
+  //   value: 1,
+  //   checked: $('.nav-sidebar').hasClass('text-sm'),
+  //   class: 'mr-1'
+  // }).on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     $('.nav-sidebar').addClass('text-sm')
+  //   } else {
+  //     $('.nav-sidebar').removeClass('text-sm')
+  //   }
+  // })
+  // var $text_sm_sidebar_container = $('<div />', { class: 'mb-1' }).append($text_sm_sidebar_checkbox).append('<span>Sidebar Nav</span>')
+  // $container.append($text_sm_sidebar_container)
 
-  var $text_sm_footer_checkbox = $('<input />', {
-    type: 'checkbox',
-    value: 1,
-    checked: $('.main-footer').hasClass('text-sm'),
-    class: 'mr-1'
-  }).on('click', function () {
-    if ($(this).is(':checked')) {
-      $('.main-footer').addClass('text-sm')
-    } else {
-      $('.main-footer').removeClass('text-sm')
-    }
-  })
-  var $text_sm_footer_container = $('<div />', { class: 'mb-4' }).append($text_sm_footer_checkbox).append('<span>Footer</span>')
-  $container.append($text_sm_footer_container)
+  // var $text_sm_footer_checkbox = $('<input />', {
+  //   type: 'checkbox',
+  //   value: 1,
+  //   checked: $('.main-footer').hasClass('text-sm'),
+  //   class: 'mr-1'
+  // }).on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     $('.main-footer').addClass('text-sm')
+  //   } else {
+  //     $('.main-footer').removeClass('text-sm')
+  //   }
+  // })
+  // var $text_sm_footer_container = $('<div />', { class: 'mb-4' }).append($text_sm_footer_checkbox).append('<span>Footer</span>')
+  // $container.append($text_sm_footer_container)
 
   // Color Arrays
 
@@ -495,53 +495,53 @@
 
   // Navbar Variants
 
-  $container.append('<h6>Navbar Variants</h6>')
+  // $container.append('<h6>Navbar Variants</h6>')
 
-  var $navbar_variants = $('<div />', {
-    class: 'd-flex'
-  })
-  var navbar_all_colors = navbar_dark_skins.concat(navbar_light_skins)
-  var $navbar_variants_colors = createSkinBlock(navbar_all_colors, function () {
-    var color = $(this).data('color')
-    var $main_header = $('.main-header')
-    $main_header.removeClass('navbar-dark').removeClass('navbar-light')
-    navbar_all_colors.forEach(function (color) {
-      $main_header.removeClass(color)
-    })
+  // var $navbar_variants = $('<div />', {
+  //   class: 'd-flex'
+  // })
+  // var navbar_all_colors = navbar_dark_skins.concat(navbar_light_skins)
+  // var $navbar_variants_colors = createSkinBlock(navbar_all_colors, function () {
+  //   var color = $(this).data('color')
+  //   var $main_header = $('.main-header')
+  //   $main_header.removeClass('navbar-dark').removeClass('navbar-light')
+  //   navbar_all_colors.forEach(function (color) {
+  //     $main_header.removeClass(color)
+  //   })
 
-    $(this).parent().removeClass().addClass('custom-select mb-3 text-light border-0 ')
+  //   $(this).parent().removeClass().addClass('custom-select mb-3 text-light border-0 ')
 
-    if (navbar_dark_skins.indexOf(color) > -1) {
-      $main_header.addClass('navbar-dark')
-      $(this).parent().addClass(color).addClass('text-light')
-    } else {
-      $main_header.addClass('navbar-light')
-      $(this).parent().addClass(color)
-    }
+  //   if (navbar_dark_skins.indexOf(color) > -1) {
+  //     $main_header.addClass('navbar-dark')
+  //     $(this).parent().addClass(color).addClass('text-light')
+  //   } else {
+  //     $main_header.addClass('navbar-light')
+  //     $(this).parent().addClass(color)
+  //   }
 
-    $main_header.addClass(color)
-  })
+  //   $main_header.addClass(color)
+  // })
 
-  var active_navbar_color = null
-  $('.main-header')[0].classList.forEach(function (className) {
-    if (navbar_all_colors.indexOf(className) > -1 && active_navbar_color === null) {
-      active_navbar_color = className.replace('navbar-', 'bg-')
-    }
-  })
+  // var active_navbar_color = null
+  // $('.main-header')[0].classList.forEach(function (className) {
+  //   if (navbar_all_colors.indexOf(className) > -1 && active_navbar_color === null) {
+  //     active_navbar_color = className.replace('navbar-', 'bg-')
+  //   }
+  // })
 
-  $navbar_variants_colors.find('option.' + active_navbar_color).prop('selected', true)
-  $navbar_variants_colors.removeClass().addClass('custom-select mb-3 text-light border-0 ').addClass(active_navbar_color)
+  // $navbar_variants_colors.find('option.' + active_navbar_color).prop('selected', true)
+  // $navbar_variants_colors.removeClass().addClass('custom-select mb-3 text-light border-0 ').addClass(active_navbar_color)
 
-  $navbar_variants.append($navbar_variants_colors)
+  // $navbar_variants.append($navbar_variants_colors)
 
-  $container.append($navbar_variants)
+  // $container.append($navbar_variants)
 
-  // Sidebar Colors
+  // // Sidebar Colors
 
-  $container.append('<h6>Accent Color Variants</h6>')
-  var $accent_variants = $('<div />', {
-    class: 'd-flex'
-  })
+  // $container.append('<h6>Accent Color Variants</h6>')
+  // var $accent_variants = $('<div />', {
+  //   class: 'd-flex'
+  // })
   $container.append($accent_variants)
   $container.append(createSkinBlock(accent_colors, function () {
     var color = $(this).data('color')

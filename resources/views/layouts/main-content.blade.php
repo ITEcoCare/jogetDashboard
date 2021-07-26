@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -24,10 +24,13 @@
           </div>
         </div> --}}
         <!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content p-4">
+      
+      {{-- UPPER STATUS BAR --}}
       <div class="row">
         <div class="col-12 col-sm-6 col-md-3 ">
           <div class="info-box bg-primary elevation-1">
@@ -36,7 +39,7 @@
             </span>
             <div class="info-box-content ">
               <span class="info-box-text">On Progress</span>
-              <span class="info-box-number">10</span>
+              <span class="info-box-number">101</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -86,29 +89,61 @@
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
-      </div>
+      </div>{{-- ./ UPPER STATUS BAR --}}
+      
+      <hr>
 
-      <!-- Default TABLE BOX -->
-      <div class="content p-4">    
-        <hr>
-        <h2>Application Datatablex</h2>
-       <div class="card table-responsive p-3">
-        <table class="table table-sm table-hover table-bordered yajra-datatable-x ">
-          <thead>
+      {{-- DATATABLE --}}
+      <h2 style="color:">Application Datatable</h2>
+      <div class="card table-responsive p-3">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              {{-- <div class="form-group">
+                  <select name="filter_gender" id="filter_gender" class="form-control" required>
+                      <option value="">Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                  </select>
+              </div> --}}
+              {{-- <div class="form-group">
+                  <select name="filter_country" id="filter_country" class="form-control" required>
+                      <option value="">Select Applications</option>
+                      @foreach($applications as $app)
+
+                      <option value="{{ $app->name }}">{{ $app->name }}</option>
+
+                      @endforeach
+                  </select>
+              </div>
+              
+              <div class="form-group" align="center">
+                  <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
+
+                  <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
+              </div> --}}
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+        <table class="table table-hover table-bordered yajra-datatable-x ">
+        <thead>
               <tr>
                   <th>No</th>
-                  {{-- <th>ID</th> --}}
+                  {{-- <th>App ID</th> --}}
+                  <th>App Id</th>
                   <th>App name</th>
+                  <th>On Progress</th>
+                  <th>Completed</th>
+                  <th>Rejected</th>
+                  <th>Clarified</th>
+                  <th>Action</th>
                   {{-- <th>Account Name</th>
                   <th>Requester Name</th>
                   <th>Cabang</th>
                   <th>Tanggal Pengajuan</th>
                   <th>No. Permintaan</th> --}}
-                  <th>On Progress</th>
-                  <th>Completed</th>
-                  <th>Rejected</th>
-                  <th>Clarified</th>
-                  <th>Link</th>
+                  {{-- <th>Link</th> --}}
+                  {{-- <th>url2</th> --}}
                   
                   {{-- <th>Attachment Requester</th> --}}
                 </tr>
@@ -131,114 +166,19 @@
               @endforeach --}}
           </tbody>
         </table>
-      </div>
-     </div>
-    
-      <div class="row">
+      </div>{{-- ./ DATATABLE --}}
 
+      {{-- LOWER SECTION --}}
+      <div class="row">
+  
         <!--LEFT LANE -->
         <div class="col-md-9">
           <!-- TABLE: LATEST ORDERS -->
-          {{-- <div class="card">
-            <div class="card-header border-transparent">
-              <h3 class="card-title">Latest Orders</h3>
-    
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table m-0">
-                  <thead>
-                  <tr>
-                    <th>Order ID</th>
-                    <th>Item</th>
-                    <th>Status</th>
-                    <th>Popularity</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                    <td>Call of Duty IV</td>
-                    <td><span class="badge badge-success">Shipped</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="badge badge-warning">Pending</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>iPhone 6 Plus</td>
-                    <td><span class="badge badge-danger">Delivered</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="badge badge-info">Processing</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                    <td>Samsung Smart TV</td>
-                    <td><span class="badge badge-warning">Pending</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                    <td>iPhone 6 Plus</td>
-                    <td><span class="badge badge-danger">Delivered</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                    <td>Call of Duty IV</td>
-                    <td><span class="badge badge-success">Shipped</span></td>
-                    <td>
-                      <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.table-responsive -->
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-              <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-              <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-            </div>
-            <!-- /.card-footer -->
-          </div> --}}
-          <!-- /.card -->
-
+  
           <div class="card">
             <div class="card-header">
               <h5 class="card-title">Monthly Recap Report</h5>
-
+  
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                   <i class="fas fa-minus"></i>
@@ -267,7 +207,7 @@
                   <p class="text-center">
                     <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
                   </p>
-
+  
                   <div class="chart">
                     <!-- Sales Chart Canvas -->
                     <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
@@ -279,7 +219,7 @@
                   <p class="text-center">
                     <strong>Goal Completion</strong>
                   </p>
-
+  
                   <div class="progress-group">
                     Add Products to Cart
                     <span class="float-right"><b>160</b>/200</span>
@@ -288,7 +228,7 @@
                     </div>
                   </div>
                   <!-- /.progress-group -->
-
+  
                   <div class="progress-group">
                     Complete Purchase
                     <span class="float-right"><b>310</b>/400</span>
@@ -296,7 +236,7 @@
                       <div class="progress-bar bg-danger" style="width: 75%"></div>
                     </div>
                   </div>
-
+  
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Visit Premium Page</span>
@@ -305,7 +245,7 @@
                       <div class="progress-bar bg-success" style="width: 60%"></div>
                     </div>
                   </div>
-
+  
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     Send Inquiries
@@ -364,15 +304,16 @@
             <!-- /.card-footer -->
           </div>
         </div>
+        <!-- /. LEFT LANE -->
   
         <!--RIGHT LANE -->
         <div class="col-md-3">
           
-          {{-- INFO BOXES --}}
+          {{-- LOWER STATUS BAR --}}
           <!-- Info Boxes Style 2 -->
           <div class="info-box mb-3 bg-primary">
             <span class="info-box-icon"><i class="fas fa-spinner"></i></span>
-
+  
             <div class="info-box-content">
               <span class="info-box-text">On Progress</span>
               <span class="info-box-number">5,200</span>
@@ -382,7 +323,7 @@
           <!-- Info Boxes Style 2 -->
           <div class="info-box mb-3 bg-success">
             <span class="info-box-icon"><i class="fas fa-check-square"></i></span>
-
+  
             <div class="info-box-content">
               <span class="info-box-text">Approved</span>
               <span class="info-box-number">5,200</span>
@@ -392,7 +333,7 @@
           <!-- Info Boxes Style 2 -->
           <div class="info-box mb-3 bg-danger">
             <span class="info-box-icon"><i class="fas fa-times-circle"></i></span>
-
+  
             <div class="info-box-content">
               <span class="info-box-text">Rejected</span>
               <span class="info-box-number">5,200</span>
@@ -402,27 +343,19 @@
           <!-- Info Boxes Style 2 -->
           <div class="info-box mb-3 bg-warning">
             <span class="info-box-icon"><i class="fas fa-undo"></i></span>
-
+  
             <div class="info-box-content">
               <span class="info-box-text">Clarified</span>
               <span class="info-box-number">5,200</span>
             </div>
             <!-- /.info-box-content -->
           </div>
+          {{-- ./ LOWER STATUS BAR --}}
 
-          <!-- PRODUCT LIST -->
-          {{-- <div class="card">
-           
-          </div> --}}
-          <!-- /.card -->
-
-          
         </div>
-
-      </div>
-
+        <!-- /. RIGHT LANE -->
+  
+      </div>{{-- ./ LOWER SECTION --}}
       
-
-    </section>
-    <!-- /.content -->
+    </section><!-- /. Main content -->
   </div>

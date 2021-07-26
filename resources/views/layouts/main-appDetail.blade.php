@@ -1,10 +1,11 @@
-<div class="content-wrapper">
+       
+        <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Advance Finance DETAIL</h1>
+          {{-- <h1>Advance Finance DETAIL</h1> --}}
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -81,21 +82,94 @@
     <!-- /.row -->
 
      <!-- Default TABLE BOX -->
-     <div class="content p-4">    
+    <div class="content p-4">    
       <hr>
-      <h2>Application Datatablex</h2>
-     <div class="card table-responsive p-3">
-      <table class="table table-sm table-hover table-bordered yajra-datatable-x ">
-        <thead>
+      <h2>Application Detail Datatable</h2>
+      <!-- <div>TEST >>> </div> -->
+
+      <!-- {{-- @foreach ($namaTabel as $a) -->
+        <!-- <div>ISI tableName: {{$a->tableName}}</div> -->
+      <!-- @endforeach --}} -->
+
+      <hr>
+      {{-- <div>{{country_name}}</div> --}}
+      <div class="card scrollme table-responsive p-3">
+      <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8" align="center">
+           {{-- <select name="filter_gender" id="filter_gender" class="form-control" required> --}}
+            {{-- if(isset($_GET['Appname']) && isset($_GET['appId'])){
+
+            } --}}
+
+              @foreach($app_name as $app)
+
+              {{-- <option value=""> --}}
+                <a href="
+                http://127.0.0.1:8000/viewDetails/?Appname={{$app->name}}&appId={{$app->appId}}&status=
+                
+                {{-- '<a href="viewDetails/?Appname=' + content.name + '&appId='+ content.appId +'&status=ongoing" class=""> 8 ongoing </a>'; --}}
+
+                {{-- {{$namaTabel->tableName}} --}}
+                {{-- @foreach ($namaTabel as $a)
+                {{$a->tableName}}
+                @endforeach --}}
+                
+                " value="{{ $app->name }}">{{ $app->name  }} </a> |
+              {{-- </option> --}}
+                
+              @endforeach
+              <?php
+                  if(isset($_GET['Appname']) && isset($_GET['appId'])){
+                      // echo "INI DIA APPNAME >>> ". $_GET['Appname'];
+                      // echo "INI DIA APPID   >>> ". $_GET['appId'];
+          
+                      $namaApp = $_GET['Appname'];
+                      $namaTabelnya = $_GET['appId'];
+                      $namaStatus = $_GET['status'];
+                      // echo "--->>>".$tableName;
+                      $str = "appId: <b>{$namaTabelnya}</b>, app: <b>{$namaApp}</b>, status: <b>{$namaStatus}</b>";
+                      echo "<br> >>> ".$str;
+          
+                  }
+              ?>
+            {{-- </select> --}}
+
+            {{-- <div class="form-group">
+                <select name="filter_gender" id="filter_gender" class="form-control" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div> --}}
+            {{-- <div class="form-group">
+                <select name="filter_country" id="filter_country" class="form-control" required>
+                    <option value="">Select Applications</option>
+                    @foreach($app_name as $app)
+                      <option value="{{ $app->name }}">{{ $app->name }}</option>
+                    @endforeach
+                  </select>
+            </div>
+            
+            <div class="form-group" align="center">
+                <button type="button" name="filter" id="filter" class="btn btn-info">Filter</button>
+                <button type="button" name="reset" id="reset" class="btn btn-default">Reset</button>
+            </div> --}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <table class="table table-hover table-bordered yajra-datatable-y">
+        <thead class="table-success">
             <tr>
                 <th>No</th>
                 <th>ID</th>
-                <th>Created By Name</th>
+                <th>Account ID</th>
+                {{-- <th>Created By Name</th> --}}
+                {{-- <th>Requester Name</th> --}}
                 <th>Account Name</th>
-                <th>Requester Name</th>
-                <th>Cabang</th>
-                <th>Tanggal Pengajuan</th>
-                <th>No. Permintaan</th>
+                {{-- <th>Divisi</th> --}}
+                {{-- <th>Tanggal Pengajuan</th> --}}
+                <th>Request Status</th>
                 {{-- <th>On Progress</th>
                 <th>Completed</th>
                 <th>Rejected</th>
@@ -123,12 +197,43 @@
             @endforeach --}}
         </tbody>
       </table>
-    </div>
+      </div>
+
+      {{-- <div class="container" style="width: 500px;">
+        <h2>Data Table</h2>
+        <table class="table table-stripped table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>app id</th>
+                    <th>app name</th>
+                </tr>
+            </thead>
+            <tbody> --}}
+                <?php 
+                    // if(mysqli_num_rows($result) > 0){
+                    //     while ($row =mysqli_fetch_array($result)) {
+                    //         # code...
+                        ?>
+                    {{-- <tr>
+                        <td> --}}
+                        {{-- </td>
+                    </tr> --}}
+                <?php 
+                    //     }
+                    // }
+                ?>
+            {{-- </tbody>
+        </table>
+      </div> --}}
+
+      <!-- @foreach ($namaTabel as $a)
+      <div>ISI tableName: {{$a->tableName}}</div>
+      @endforeach -->
    </div>
     
     <!-- Default box -->
     
-    <table class="table table-striped">
+    {{-- <table class="table table-striped">
       <thead class="table-dark">
         <tr>
             <th scope="col">#</th>
@@ -137,8 +242,8 @@
             <th scope="col">Branch</th>
             <th scope="col">Date Created</th>
             <th scope="col">Status</th>
-            {{-- <th scope="col">Clarified Requests</th> --}}
-            {{-- <th scope="col">Joget Version</th> --}}
+            <th scope="col">Clarified Requests</th>
+            <th scope="col">Joget Version</th>
         </tr>
       </thead>
       <tbody>
@@ -151,18 +256,24 @@
           <td>{{$apps -> c_cabang}}</td>
           <td>{{$apps -> dateCreated}}</td>
           <td>{{$apps -> c_status}}</td>
-          {{-- <td>
+          <td>
               <a class="btn btn-success" href="{{$apps-> link}}">Enter</a>
-          </td> --}}
+          </td>
         </tr>
         @endforeach
 
       </tbody>
-    </table>
+    </table> 
     <!-- /.card -->
 
     <div class="row">
 
+      <!-- @foreach ($namaTabel as $a)
+        <div><br>ISI tableName: {{$a->tableName}}</div>
+      @endforeach -->
+      <hr>
+  
+    
       <!--LEFT LANE -->
       <div class="col-md-9">
         <!-- TABLE: LATEST ORDERS -->
@@ -297,12 +408,11 @@
           </div>
           <!-- /.card-footer -->
         </div>
-      </div>
+      </div> --}}
 
       <!--RIGHT LANE -->
-      <div class="col-md-3">
+      {{-- <div class="col-md-3">
         
-        {{-- INFO BOXES --}}
         <!-- Info Boxes Style 2 -->
         <div class="info-box mb-3 bg-primary">
           <span class="info-box-icon"><i class="fas fa-spinner"></i></span>
@@ -345,7 +455,7 @@
         </div>
 
         
-      </div>
+      </div> --}}
 
     </div>
 

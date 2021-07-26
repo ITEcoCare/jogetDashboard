@@ -1,9 +1,40 @@
+<!-- DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3307
+DB_DATABASE=jwdb_dev
+DB_USERNAME=root 
+DB_PASSWORD= -->
+<?php
+    // $hostname = 'localhost';
+    // $username = 'root';
+    // $password = '';
+    // $databaseName = 'jwdb_dev';
+
+    // var $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+    // $sql = "SELECT * from app_app";
+    // $result = mysqli_query($connect, $sql);
+
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title', 'AdminLTE 3 | Homepage')</title>
+  
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+{{-- DATA TABLE SCRIPTS 1--}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> --}}
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -31,7 +62,7 @@
 
   @stack('custom-css')
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-navbar-fixed layout-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -131,19 +162,22 @@
 <script type="text/javascript">
     $(function () {
       
-      var table = $('.yajra-datatable-x').DataTable({
+      var table = $('.yajra-datatable-y').DataTable({
+          // iDisplayLength: 25,
           processing: true,
           serverSide: true,
-          ajax: "{{ route('app_app.list') }}",
+          ajax: "{{ route('app_app.list2') }}",
           columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'appId', name: 'appId'},
-            {data: 'name', name: 'name'},
-            {data: 'published', name: 'published'},
-            {data: 'published', name: 'published'},
-            {data: 'published', name: 'published'},
-            {data: 'link', name: 'link'},
-            // {data: 'createdBy', name: 'createdBy'},
+            {data: 'id', name: 'id'},
+            {data: 'createdBy', name: 'createdBy'},//ACCOUNT NAME
+            {data: 'createdByName', name: 'createdByName'}, //
+            {data: 'c_status', name: 'c_status'},
+            // {data: 'c_namaKaryawan', name: 'c_namaKaryawan'},
+            // {data: 'c_cabang', name: 'c_cabang'},
+            // {data: 'c_divisi', name: 'c_divisi'},
+            // {data: 'c_tanggalPengajuan', name: 'c_tanggalPengajuan'},
+            // {data: 'c_requestStatus', name: 'c_requestStatus'},
             // {data: 'c_namaRequester', name: 'c_namaRequester'},
             // {data: 'createdByName', name: 'createdByName'},
             // {data: 'c_tanggalPengajuan', name: 'c_tanggalPengajuan'},
